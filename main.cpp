@@ -11,22 +11,23 @@ long long int navtora(long long int in){
 }
 
 int main(){
-    int n,i,j=0,k=0,najmal=navtora((sizeof(int)*8)-1)-1;
-    cout<<"Kolku broevi: ";
+    long long int n,i,j=0,k=0,najmal=navtora((sizeof(long long int)*8)-1)-1;
+    cout<<"How many numbers: ";
     cin>>n;
-    int a[n];
+    long long int a[n];
     bool sega=true;
     for(i=0;i<n;i++){
-        cout<<'['<<i<<"]\tBrojka: ";
-        cin>>a[i];
+        cout<<'['<<i<<"]\tNumber: ";
+        cin>>j;
+        a[i]=j;
         najmal=min(najmal,a[i]);
     }
     cout<<endl;
-    int faktori[najmal];
+    long long int faktori[najmal];
     for(i=1;i<=najmal;i++){
         sega=true;
         for(j=0;j<n;j++){
-            if(a[i]%i!=0){
+            if(a[j]%i!=0){
                 sega=false;
             }
         }
@@ -45,5 +46,8 @@ int main(){
         }
     }
     cout<<")="<<faktori[k-1]<<endl;
+    string tmp;
+    getline(cin,tmp);
+    getline(cin,tmp);
     return 0;
 }
